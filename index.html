@@ -9,7 +9,7 @@
 </head>
 <body class="dark:bg-slate-900 transition-colors duration-300">
 
-    <header class="w-full z-40 h-20 shadow-sm shadow-slate-300 transition-all dark:shadow-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
+    <header class="fixed w-full z-40 h-20 shadow-sm shadow-slate-300 transition-all dark:shadow-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
 
         <div class="max-w-7xl mx-auto flex items-center justify-between h-full px-4">
             <h1 class="text-lg font-bold text-green-700   dark:text-green-500 md:text-2xl lg:text-3xl">
@@ -40,15 +40,63 @@
         </div>
     </header>
 
-    <main class="py-60">
+    <main class="max-w-7xl mx-auto px-4 py-36 flex justify-between items-center flex-col lg:flex-row">
         <section id="hero-content">
             <h1 class="text-3xl font-bold dark:text-white">Bring back the joy of reading newsletters</h1>
             <p class="mt-5 text-green-700 dark:text-green-500">Discover, subscribe and manage all your email newsletters in one place.</p>
             <button class="bg-green-700 text-white text-sm px-5 py-1 mt-16 rounded-full dark:bg-green-500">Try For Free</button>
         </section>
-        <section id="hero-frame"></section>
+        <section id="hero-frame"><img src="./Images/Frame.png" alt="hero photo frame"></section>
     </main>
-
+    <section id="about" class="max-w-7xl mx-auto px-4 py-7">
+        <section class="about_head text-center">
+            <h1 class="text-2xl font-bold">Why Newsletter-App? How to enjoy your feed?</h1>
+            <p class="text-green-700 dark:text-green-500">Be ready for an amazing experience.</p>
+        </section>
+        <section class="flex justify-between items-center pt-48 relative">
+            <ul class="flex flex-col gap-24">
+                <li class="absolute top-36 left-11">
+                    <h2 class="relative font-bold text-xl before:content-[''] before:block before:w-1 before:h-11 before:bg-green-700 dark:before:bg-green-500 before:-left-3 before:top-2 before:absolute">Kill The Spam</h2>
+                    <p class="text-green-700 dark:text-green-500 w-64">
+                        Use Newsletter email to subscribe to newsletters. Win the battle against spam. Earn more time for a joyful reading.
+                    </p>
+                </li>
+                <li class="absolute top-2/4 left-0">
+                    <h2 class="font-bold text-xl relative before:content-[''] before:block before:w-1 before:h-11 before:bg-green-700 dark:before:bg-green-500 before:-left-3 before:top-2 before:absolute">Be part of Newsletter community</h2>
+                    <p class="text-green-700 dark:text-green-500 w-64">
+                        Join top experts for a chat on the topics and trends that m-atter to you.
+                    </p>
+                </li>
+                <li class="absolute bottom-36 left-11">
+                    <h2 class="font-bold text-xl relative before:content-[''] before:block before:w-1 before:h-11 before:bg-green-700 dark:before:bg-green-500 before:-left-3 before:top-2 before:absolute">Discover Newsletters</h2>
+                    <p class="text-green-700 dark:text-green-500 w-64">
+                        Browse through your interests and find the ultimate content. Inspire yourself!
+                    </p>
+                </li>
+            </ul>
+            <img class="" src="./Images/Frame.png" alt="">
+            <ul class="flex flex-col gap-24">
+                <li class="absolute top-36 right-11">
+                    <h2 class="font-bold text-xl relative before:content-[''] before:block before:w-1 before:h-11 before:bg-green-700 dark:before:bg-green-500 before:-left-3 before:top-2 before:absolute">One-Click Unsubscribe</h2>
+                    <p class="text-green-700 dark:text-green-500 w-64">
+                        Don’t like what you’re reading? Remove the feed and never see it again.
+                    </p>
+                </li>
+                <li class="absolute top-2/4 right-0">
+                    <h2 class="font-bold text-xl relative before:content-[''] before:block before:w-1 before:h-11 before:bg-green-700 dark:before:bg-green-500 before:-left-3 before:top-2 before:absolute">Control Your Feed</h2>
+                    <p class="text-green-700 dark:text-green-500 w-64">
+                        Group newsletters into folders, create labels, quickly mark as read and update the appearance.
+                    </p>
+                </li>
+                <li class="absolute bottom-36 right-11">
+                    <h2 class="font-bold text-xl relative before:content-[''] before:block before:w-1 before:h-11 before:bg-green-700 dark:before:bg-green-500 before:-left-3 before:top-2 before:absolute">Enjoy Newsletter</h2>
+                    <p class="text-green-700 dark:text-green-500 w-64">
+                        No ads and spam in this app. Take reading and sharing to the next level with Letterbox. 
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </section>
     <script src="main.js"></script>
 </body>
 </html>
