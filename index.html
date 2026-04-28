@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsletter App</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggle.querySelector('img').src = './Images/sun.png'
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggle.querySelector('img').src = './Images/moon.png'
+        }
+    </script>
 </head>
 <body class="dark:bg-slate-900 transition-colors duration-300">
 
@@ -16,10 +25,10 @@
             </h2>
 
             <div id="menu-container" 
-                class="absolute right-0 top-20 h-screen  z-50 flex w-full flex-col items-center px-7 py-7 text-center
+                class="absolute right-0 top-20 h-screen z-50 flex w-full flex-col items-center px-7 py-7 text-center
                 bg-white/80 dark:bg-slate-900/80
                 invisible pointer-events-none -translate-x-full transition-all duration-700 
-                sm:static sm:visible sm:flex-row sm:w-auto sm:translate-x-0 sm:bg-transparent dark:sm:bg-transparent sm:px-0 sm:py-0 sm:text-left sm:gap-6 md:gap-8 lg:gap-16 sm:pointer-events-auto backdrop-blur-md">
+                sm:static sm:visible sm:flex-row sm:w-auto sm:translate-x-0 sm:bg-transparent dark:sm:bg-transparent sm:px-0 sm:py-0 sm:text-left gap-6 md:gap-8 lg:gap-16 sm:pointer-events-auto backdrop-blur-md">
                 
                 <ul class="flex flex-col items-center gap-8 mb-8 sm:flex-row sm:mb-0 sm:gap-4 md:gap-6 lg:gap-8">
                     <li class="nav-link">How it works</li>
@@ -30,6 +39,10 @@
 
                 <button aria-label="Log In" class="max-h-fit cursor-pointer rounded-full border-2 border-green-700 px-8 py-1 text-green-700 transition-all duration-200 hover:bg-green-700 hover:text-white dark:border-green-500 dark:text-green-500 dark:hover:bg-green-500 dark:hover:text-white">
                     LogIn
+                </button>
+
+                <button id="themeToggle" class="w-9">
+                    <img src="./Images/moon.png" alt="dark-day mode toggle">
                 </button>
             </div>
 
@@ -43,9 +56,9 @@
         <section id="hero-content">
             <h1 class="text-3xl font-bold dark:text-white">Bring back the joy of reading newsletters</h1>
             <p class="mt-5 text-green-700 dark:text-green-500">Discover, subscribe and manage all your email newsletters in one place.</p>
-            <button class="bg-green-700 text-white text-sm px-5 py-1 mt-16 rounded-full dark:bg-green-500">Try For Free</button>
+            <button class="bg-green-700 text-white text-sm px-7 py-2 mt-16 rounded-full dark:bg-green-500 hover:scale-105 hover:shadow-xl hover:shadow-green-500/50 active:scale-95 transition-all duration-300">Try For Free</button>
         </section>
-        <section id="hero-frame"><img src="./Images/Frame.png" alt="hero photo frame"></section>
+        <section id="hero-frame"><img src="./Images/Frame.png" alt="hero photo frame" class="dark:opacity-80"></section>
     </main>
     <section id="about" class="max-w-7xl mx-auto px-4 py-7">
         <section class="about_head text-center">
@@ -73,7 +86,7 @@
                     </p>
                 </li>
             </ul>
-            <img class="mb-11 lg:mb-0" src="./Images/about frame.png" alt="about image frame">
+            <img class="mb-11 lg:mb-0 dark:opacity-80" src="./Images/about frame.png" alt="about image frame">
             <ul class="flex-1 w-full">
                 <li class="md:justify-self-end">
                     <h2 class="dark:text-white font-bold text-xl relative before:content-[''] before:block before:w-1 before:h-11 before:bg-green-700 dark:before:bg-green-500 before:-left-3 before:top-2 before:absolute">One-Click Unsubscribe</h2>
@@ -102,21 +115,21 @@
             Newsletter-App, you will have the chance to bring back the joy of newsletter
             reading.
             There are no ads, no spam emails and…</p>
-        <button class="bg-green-700 text-white text-sm px-5 py-1 mt-16 rounded-full dark:bg-green-500">read more</button>
+        <button class="bg-green-700 text-white transition-all duration-300 text-sm px-7 py-2 mt-16 rounded-full dark:bg-green-500 hover:scale-105 hover:shadow-xl hover:shadow-green-500/50 active:scale-95">read more</button>
     </section>
-    <section id="services" class="bg-yellow-200">
+    <section id="services" class="bg-yellow-200 dark:bg-slate-800">
         <section class="max-w-7xl mx-auto flex flex-col md:flex-row gap-7 px-4 py-9">
-            <div class="text-center p-11 bg-white rounded-lg">
+            <div class="text-center p-11 bg-white dark:bg-slate-700 dark:text-white rounded-lg">
                 <h5 class="text-green-700 dark:text-green-500">BUSINESS DEVELOPMENT</h5>
                 <h2 class="font-bold mb-3 text-xl"><span class="text-red-400">a</span>genus</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vero facilis architecto rerum inventore adipisci fugit?</p>
             </div>
-            <div class="text-center p-11 bg-white rounded-lg">
+            <div class="text-center p-11 bg-white dark:bg-slate-700 dark:text-white rounded-lg">
                 <h5 class="text-green-700 dark:text-green-500">BUSINESS DEVELOPMENT</h5>
                 <h2 class="font-bold mb-3 text-xl"><span class="text-red-400">a</span>genus</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vero facilis architecto rerum inventore adipisci fugit?</p>
             </div>
-            <div class="text-center p-11 bg-white rounded-lg">
+            <div class="text-center p-11 bg-white dark:bg-slate-700 dark:text-white rounded-lg">
                 <h5 class="text-green-700 dark:text-green-500">BUSINESS DEVELOPMENT</h5>
                 <h2 class="font-bold mb-3 text-xl"><span class="text-red-400">a</span>genus</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vero facilis architecto rerum inventore adipisci fugit?</p>
@@ -127,42 +140,42 @@
         <h2 class="text-2xl dark:text-white">Enjoy reading newsletters</h2>
         <h3 class="text-xl dark:text-white">Read valuable, high-quality content based on your interest and expertise</h3>
     </section>
-    <section id="testemonials" class="bg-gray-200">
+    <section id="testemonials" class="bg-gray-200 dark:bg-slate-800">
         <section class="max-w-7xl mx-auto px-4 py-32">
             <h3 class="text-green-700 dark:text-green-500 text-center mb-20 text-xl">Join 1000+ Happy Premium Users</h3>
             <div id="userCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                 <div class="w-fit">
-                    <p class="w-64 mw-auto mb-7">
+                    <p class="w-64 mw-auto mb-7 dark:text-white">
                         Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.
                     </p>
                     <div class="flex gap-2 items-center">
                         <img src="./Images/circle.png" alt="photo of woman" class="w-8 h-8">
                         <div id="userInfo">
-                            <h4>Savannah Miles</h4>
+                            <h4 class="dark:text-white">Savannah Miles</h4>
                             <p class="text-green-700 dark:text-green-500 text-sm">Brand Manager</p>
                         </div>
                     </div>
                 </div>
                 <div class="w-fit">
-                    <p class="w-64 mb-7">
+                    <p class="w-64 mb-7 dark:text-white">
                         Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.
                     </p>
                     <div class="flex gap-2 items-center">
                         <img src="./Images/circle.png" alt="photo of woman" class="w-8 h-8">
                         <div id="userInfo">
-                            <h4>Savannah Miles</h4>
+                            <h4 class="dark:text-white">Savannah Miles</h4>
                             <p class="text-green-700 dark:text-green-500 text-sm">Brand Manager</p>
                         </div>
                     </div>
                 </div>
                 <div class="w-fit">
-                    <p class="w-64 mb-7">
+                    <p class="w-64 mb-7 dark:text-white">
                         Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est.
                     </p>
                     <div class="flex gap-2 items-center">
                         <img src="./Images/circle.png" alt="photo of woman" class="w-8 h-8">
                         <div id="userInfo">
-                            <h4>Savannah Miles</h4>
+                            <h4 class="dark:text-white">Savannah Miles</h4>
                             <p class="text-green-700 dark:text-green-500 text-sm">Brand Manager</p>
                         </div>
                     </div>
@@ -170,29 +183,29 @@
             </div>
         </section>
     </section>
-    <section class="bg-slate-800 dark:bg-slate-200">
+    <section class="bg-slate-800">
         <section class="max-w-7xl mx-auto px-4 py-32 flex flex-col md:flex-row justify-between gap-3 items-center">
             <section id="subscribeContent" class="flex-1 order-2 md:order-1">
-                <h2 class="text-xl md:text-3xl text-white dark:text-slate-800">Bring back the joy of reading newsletters</h2>
-                <p class="text-green-500 dark:text-green-700">Subscribe and be ready for an amazing experience</p>
+                <h2 class="text-xl md:text-3xl text-white">Bring back the joy of reading newsletters</h2>
+                <p class="text-green-500 dark:text-green-500">Subscribe and be ready for an amazing experience</p>
                 <ul class="list-none my-7">
-                    <li class="text-white dark:text-slate-800 before:content-[url('./Images/check.png')] before:block before:h-5 flex items-center gap-3 ">
+                    <li class="text-white before:content-[url('./Images/check.png')] before:block before:h-5 flex items-center gap-3 ">
                         Save time and read your newsletters in one place.
                     </li>
-                    <li class="text-white dark:text-slate-800 before:content-[url('./Images/check.png')] before:block before:h-5 flex items-center gap-3 my-3">
+                    <li class="text-white before:content-[url('./Images/check.png')] before:block before:h-5 flex items-center gap-3 my-3">
                         Organize your newsletter feed according to your interests.
                     </li>
-                    <li class="text-white dark:text-slate-800 before:content-[url('./Images/check.png')] before:block before:h-5 flex items-center gap-3 ">
+                    <li class="text-white before:content-[url('./Images/check.png')] before:block before:h-5 flex items-center gap-3 ">
                         Forget about newsletters emails and focus only in reading.
                     </li>
                 </ul>
-                <button class="bg-green-500 dark:bg-green-700 text-white px-11 py-3 rounded-full">Subscribe</button>
+                <button class="bg-green-500 dark:bg-green-500 text-white hover:scale-105 hover:shadow-xl hover:shadow-green-500/50 active:scale-95 transition-all duration-300 px-11 py-3 rounded-full">Subscribe</button>
             </section>
             <section id="subscribeImage" class="w-full flex-1 order-1 md:order-2">
                 <div class="relative w-full h-[400px]">
-                    <img src="./Images/subscribe.png" alt="subscribe frame" class="block absolute top-24 right-24 md:right-0 z-20">
-                    <img src="./Images/subscribe.png" alt="subscribe frame" class="block absolute top-11 right-36 md:right-11 z-10">
-                    <img src="./Images/subscribe.png" alt="subscribe frame" class="block absolute top-0 right-52 md:right-24">
+                    <img src="./Images/subscribe.png" alt="subscribe frame" class="block absolute top-24 right-24 md:right-0 z-20 dark:opacity-80">
+                    <img src="./Images/subscribe.png" alt="subscribe frame" class="block absolute top-11 right-36 md:right-11 z-10 dark:opacity-80">
+                    <img src="./Images/subscribe.png" alt="subscribe frame" class="block absolute top-0 right-52 md:right-24 dark:opacity-80">
                 </div>
             </section>
         </section>
@@ -201,7 +214,7 @@
         <section id="footerNavContainer" class="max-w-7xl mx-auto mb-24 flex flex-col md:flex-row gap-11 md:gap-32 lg:gap-44">
             <div>
                 <h2 class="text-xl text-green-700 dark:text-green-500 mb-2">Get started</h2>
-                <ul>
+                <ul class="dark:text-white">
                     <li class="mb-2">Blog</li>
                     <li class="mb-2">Site Map</li>
                     <li class="mb-2">F.A.Q.</li>
@@ -209,7 +222,7 @@
             </div>
             <div>
                 <h2 class="text-xl text-green-700 dark:text-green-500 mb-2">Pricing</h2>
-                <ul>
+                <ul class="dark:text-white">
                     <li class="mb-2">Bronze</li>
                     <li class="mb-2">silver</li>
                     <li class="mb-2">Gold</li>
@@ -217,14 +230,14 @@
             </div>
             <div>
                 <h2 class="text-xl text-green-700 dark:text-green-500 mb-2">Follow</h2>
-                <ul>
+                <ul class="dark:text-white">
                     <li class="mb-2">Facebook</li>
                     <li class="mb-2">LinkedIn</li>
                     <li class="mb-2">Twitter</li>
                 </ul>
             </div>
         </section>
-        <p class="ml-4">Data is a real-time snapshot *Data is delayed at least 15 minutes. Global Olives and Natural product, Market and Analysis.</p>
+        <p class="ml-4 dark:text-white">Data is a real-time snapshot *Data is delayed at least 15 minutes. Global Olives and Natural product, Market and Analysis.</p>
     </section>
     <footer class="px-4 py-9 bg-green-700 dark:bg-green-500 flex flex-col md:flex-row gap-11 md:gap7 justify-between items-center">
         <section id="footer-left">
